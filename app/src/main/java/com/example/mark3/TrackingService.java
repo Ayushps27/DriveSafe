@@ -23,7 +23,7 @@ public class TrackingService extends Service {
     final long MIN_DIST = 10;
     final float TO_KMPH = 3.6f;
     final float MAX_SPEED = 30f;
-    boolean OVERLAY_RUNNING=false;
+    static boolean OVERLAY_RUNNING=false;
 
     String TAG = "Tracking service";
 

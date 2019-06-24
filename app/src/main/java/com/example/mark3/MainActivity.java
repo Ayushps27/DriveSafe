@@ -40,8 +40,7 @@ public class MainActivity extends AppCompatActivity {
             startService(new Intent(this, TrackingService.class));
             Toast.makeText(this, "Service Started!", Toast.LENGTH_SHORT).show();
             TRACKING_SERVICE_RUNNING = true;
-        }
-        else
+        } else
             Toast.makeText(this, "Already Active!", Toast.LENGTH_SHORT).show();
     }
 
@@ -49,9 +48,12 @@ public class MainActivity extends AppCompatActivity {
         if (TRACKING_SERVICE_RUNNING) {
             stopService(new Intent(this, TrackingService.class));
             Toast.makeText(this, "Service Stopped!", Toast.LENGTH_SHORT).show();
-            TRACKING_SERVICE_RUNNING=false;
-        }
-        else
+            TRACKING_SERVICE_RUNNING = false;
+            if (TrackingService.OVERLAY_RUNNING) {
+                stopService(new Intent(this, OverlayService.class));
+                TrackingService.OVERLAY_RUNNING = false;
+            }
+        } else
             Toast.makeText(this, "Service Stopped already!", Toast.LENGTH_SHORT).show();
     }
 
