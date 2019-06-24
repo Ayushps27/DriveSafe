@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.graphics.PixelFormat;
 import android.os.IBinder;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
 
@@ -25,8 +26,9 @@ public class OverlayService extends Service {
         WindowManager.LayoutParams params = new WindowManager.LayoutParams(
                 WindowManager.LayoutParams.MATCH_PARENT,
                 WindowManager.LayoutParams.MATCH_PARENT,
-                WindowManager.LayoutParams.TYPE_SYSTEM_OVERLAY, 0 | WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
-                PixelFormat.TRANSLUCENT);
+                WindowManager.LayoutParams.TYPE_SYSTEM_ALERT, WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN
+                ,PixelFormat.OPAQUE);
+        params.gravity= Gravity.BOTTOM;
         WindowManager wm = (WindowManager) getSystemService(WINDOW_SERVICE);
         wm.addView(oView, params);
         return super.onStartCommand(intent, flags, startId);
@@ -49,4 +51,5 @@ public class OverlayService extends Service {
         }
         super.onDestroy();
     }
+
 }

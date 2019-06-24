@@ -15,6 +15,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -56,5 +57,16 @@ public class MainActivity extends AppCompatActivity {
         } else
             Toast.makeText(this, "Service Stopped already!", Toast.LENGTH_SHORT).show();
     }
-
+    public void buttonToggleON(){
+        Button btn=(Button) findViewById(R.id.DeactivateButton);
+        if(!btn.isEnabled()){
+            btn.setEnabled(true);
+        }
+    }
+    public void buttonToggleOFF(){
+        Button btn=(Button) findViewById(R.id.DeactivateButton);
+        if(btn.isEnabled()){
+            btn.setEnabled(false);
+        }
+    }
 }

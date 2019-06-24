@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.support.v4.app.ActivityCompat;
 import android.util.Log;
+import android.widget.Button;
 
 import java.util.List;
 
@@ -58,6 +59,7 @@ public class TrackingService extends Service {
     protected void getLocationUpdates() {
         locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
         locationListener = new LocationListener() {
+            MainActivity obj=new MainActivity();
             @Override
             public void onLocationChanged(Location location) {
                 Log.i(TAG, "onLocationChanged: " + Double.toString(location.getSpeed()));
