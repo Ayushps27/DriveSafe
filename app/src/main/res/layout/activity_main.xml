@@ -49,13 +49,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-    <FrameLayout
-        android:id="@+id/FL"
-        android:layout_width="416dp"
-        android:layout_height="733dp"
+    <Switch
+        android:id="@+id/ParentalSwitch"
+        android:layout_width="190dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="204dp"
+        android:layout_marginTop="216dp"
+        android:showText="true"
+        android:text="Parental Mode"
+        android:textAllCaps="false"
+        android:textColor="#E71E62"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </FrameLayout>
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

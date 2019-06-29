@@ -60,7 +60,7 @@ public class TrackingService extends Service {
             MainActivity obj=new MainActivity();
             @Override
             public void onLocationChanged(Location location) {
-                Log.i(TAG, "onLocationChanged: " + Double.toString(location.getSpeed()));
+                Log.i(TAG, "onLocationChanged: " + location.getSpeed());
                 if (location.hasSpeed() && location.getSpeed() * TO_KMPH > MAX_SPEED) {
                     startOverlay();
                 }
