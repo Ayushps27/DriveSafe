@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:" + getPackageName()));
             startActivityForResult(intent, 0);
         }
-        final Switch pswitch=(Switch) findViewById(R.id.ParentalSwitch);
+        final Switch pswitch = findViewById(R.id.ParentalSwitch);
         pswitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {

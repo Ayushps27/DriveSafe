@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Mark3</string>
+    <string name="enter_pin">Enter PIN</string>
+    <string name="hint">Enter Pin</string>
+    <string name="activate">Activate</string>
+    <string name="deactivate">Deactivate</string>
+    <string name="parental_mode">Parental Mode</string>
 </resources>

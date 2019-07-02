@@ -14,8 +14,9 @@ public class PinSetDialog extends Dialog implements android.view.View.OnClickLis
     private Activity activity;
     private EditText epin,cpin;
     private Button confirm;
-    String TAG="PinSetDialog";
-    public PinSetDialog(Activity a){
+    private String TAG = "PinSetDialog";
+
+    PinSetDialog(Activity a) {
         //Empty constructor. Leave it.
         super(a);
         this.activity=a;
@@ -27,32 +28,27 @@ public class PinSetDialog extends Dialog implements android.view.View.OnClickLis
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.pin_dialog);
         this.setCanceledOnTouchOutside(false);
-        epin=(EditText) findViewById(R.id.enterPinField);
-        cpin=(EditText) findViewById(R.id.confirmPinField);
+        epin = findViewById(R.id.enterPinField);
+        cpin = findViewById(R.id.confirmPinField);
         //cancel=(Button) findViewById(R.id.bCancel);
-        confirm=(Button) findViewById(R.id.bConfirm);
+        confirm = findViewById(R.id.bConfirm);
         //cancel.setOnClickListener(this);
         confirm.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
-            /*case R.id.bCancel:
+        /*case R.id.bCancel:
                 Log.i(TAG, "Cancel ");
                 dismiss();
                 break;*/
-            case R.id.bConfirm:
-                if(String.valueOf(epin.getText()).equals(String.valueOf(cpin.getText()))){
-                    MainActivity.setParentalPin(String.valueOf(epin.getText()));
-                    dismiss();
-                    Log.i(TAG, "PIN SAVED");
-                }
-                else
-                    Toast.makeText(activity, "Invalid Inputs, Try Again!", Toast.LENGTH_SHORT).show();
-                break;
-            default:
-                break;
+        if (v.getId() == R.id.bConfirm) {
+            if (String.valueOf(epin.getText()).equals(String.valueOf(cpin.getText()))) {
+                MainActivity.setParentalPin(String.valueOf(epin.getText()));
+                dismiss();
+                Log.i(TAG, "PIN SAVED");
+            } else
+                Toast.makeText(activity, "Invalid Inputs, Try Again!", Toast.LENGTH_SHORT).show();
         }
     }
 
